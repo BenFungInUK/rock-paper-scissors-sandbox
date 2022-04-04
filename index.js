@@ -37,10 +37,9 @@ const playGame = () => {
   runAnimations(playerOneMove, playerTwoMove, outcome);
 };
 
-const updateDOM = (moveOne, moveTwo, outcome, anim) => {
+const updateDOM = (moveOne, moveTwo, outcome) => {
   // TODO Implement this method to update the DOM
   // There are some images you can use in the images directory
-  clearInterval(anim);
   document.getElementById(
     "player-one-move__img"
   ).src = `./images/${moveOne}.png`;
@@ -64,7 +63,8 @@ const runAnimations = (moveOne, moveTwo, outcome) => {
     ).src = `./images/${getRandomMove()}.png`;
   }, 200);
   setTimeout(() => {
-    updateDOM(moveOne, moveTwo, outcome, anim);
+    clearInterval(anim);
+    updateDOM(moveOne, moveTwo, outcome);
   }, 2000);
 };
 
