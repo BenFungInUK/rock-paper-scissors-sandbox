@@ -34,7 +34,7 @@ const playGame = () => {
   const playerOneMove = getRandomMove();
   const playerTwoMove = getRandomMove();
   const outcome = getOutcome(playerOneMove, playerTwoMove);
-  animations(playerOneMove, playerTwoMove, outcome);
+  runAnimations(playerOneMove, playerTwoMove, outcome);
 };
 
 const updateDOM = (moveOne, moveTwo, outcome, anim) => {
@@ -52,7 +52,7 @@ const updateDOM = (moveOne, moveTwo, outcome, anim) => {
   playButton.disabled = false;
 };
 
-const animations = (moveOne, moveTwo, outcome) => {
+const runAnimations = (moveOne, moveTwo, outcome) => {
   const anim = setInterval(() => {
     document.getElementById("player-one-move__img").src =
       "./images/" + getRandomMove() + ".png";
