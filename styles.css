@@ -25,6 +25,10 @@ body {
   background-color: lightblue;
 }
 
+.btn:disabled {
+  background-color: lightblue;
+}
+
 .player {
   color: var(--primary);
 }

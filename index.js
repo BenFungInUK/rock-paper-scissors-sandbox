@@ -30,6 +30,7 @@ const resetGame = () => {
 
 const playGame = () => {
   resetGame();
+  playButton.disabled = true;
   const playerOneMove = getRandomMove();
   const playerTwoMove = getRandomMove();
   const outcome = getOutcome(playerOneMove, playerTwoMove);
@@ -48,6 +49,7 @@ const updateDOM = (moveOne, moveTwo, outcome, anim) => {
   result.id = "outcome";
   result.textContent = outcome;
   document.body.appendChild(result);
+  playButton.disabled = false;
 };
 
 const animations = (moveOne, moveTwo, outcome) => {
