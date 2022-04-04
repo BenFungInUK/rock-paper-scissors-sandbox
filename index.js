@@ -41,10 +41,12 @@ const updateDOM = (moveOne, moveTwo, outcome, anim) => {
   // TODO Implement this method to update the DOM
   // There are some images you can use in the images directory
   clearInterval(anim);
-  document.getElementById("player-one-move__img").src =
-    "./images/" + moveOne + ".png";
-  document.getElementById("player-two-move__img").src =
-    "./images/" + moveTwo + ".png";
+  document.getElementById(
+    "player-one-move__img"
+  ).src = `./images/${moveOne}.png`;
+  document.getElementById(
+    "player-two-move__img"
+  ).src = `./images/${moveTwo}.png`;
   const result = document.createElement("div");
   result.id = "outcome";
   result.textContent = outcome;
@@ -54,10 +56,12 @@ const updateDOM = (moveOne, moveTwo, outcome, anim) => {
 
 const runAnimations = (moveOne, moveTwo, outcome) => {
   const anim = setInterval(() => {
-    document.getElementById("player-one-move__img").src =
-      "./images/" + getRandomMove() + ".png";
-    document.getElementById("player-two-move__img").src =
-      "./images/" + getRandomMove() + ".png";
+    document.getElementById(
+      "player-one-move__img"
+    ).src = `./images/${getRandomMove()}.png`;
+    document.getElementById(
+      "player-two-move__img"
+    ).src = `./images/${getRandomMove()}.png`;
   }, 200);
   setTimeout(() => {
     updateDOM(moveOne, moveTwo, outcome, anim);
